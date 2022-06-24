@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base}">
+<section layout:fragment="content">
+    <head>
+        <meta charset="UTF-8">
+        <title>Trener</title>
+    </head>
+
+    <body>
+    Nowy Trener:
+
+    <form action="#" th:action="@{/add}" th:object="${trener}" method="GET">
+        Imie: <input type="text" name="imie" th:field="*{imie}"/><br/>
+        Nazwisko: <input type="text" name="nazw" th:field="*{nazwisko}"/><br/>
+        E-Mail: <input type="text" name="email" th:field="*{email}"/><br/>
+        Numer Telefonu: <input type="text" name="nrtel" th:field="*{nrKontaktowy}"/><br/>
+        Data Urodzenia: <input type="date" name="dataur" th:field="*{dataUrodzenia}"/><br/>
+        Liczba Godzin w Miesiącu: <input type="text" name="liczbagodzin" th:field="*{liczbaGodzin}"/><br/>
+        Stawka za Godzinę: <input type="text" name="stawka" th:field="*{stawkaZaGodzine}"/><br/>
+
+        <button name="submit" type="submit" value="0">Submit</button>
+    </form>
+
+
+    </body>
+</section>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Title</title>
+    <link rel="stylesheet" href="/main.css"/>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: sans-serif;
+
+        }
+        body{
+            margin:0;
+            background: #f6f9ff;
+            color: #444444;
+        }
+        nav{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background: white;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        nav a{
+            display: inline-block;
+            text-decoration: none;
+            padding: 5px 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: cornflowerblue;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        nav b{
+            position: fixed;
+            top: 700px;
+            display: inline-block;
+            text-decoration: none;
+            padding: 2px 2px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: cornflowerblue;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            align-items: baseline;
+        }
+
+        nav c{
+            position: fixed;
+            top: 750px;
+            display: inline-block;
+            text-decoration: none;
+            padding: 5px 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: cornflowerblue;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            align-items: end;
+        }
+        nav a:hover{
+            color: #004cec;
+        }
+        nav b:hover{
+            color: #004cec;
+        }
+        nav c:hover{
+            color: #004cec;
+        }
+
+
+        div{
+            margin-left: 250px;
+            padding: 10px;
+            color: #555;
+        }
+    </style>
+
+</head>
+<body>
+
+<nav>
+    <a href="#">Mecze</a>
+    <a href="#">Zawodnicy</a>
+    <a href="#">Sponsorzy</a>
+    <a href="#">O nas</a>
+    <a href="#">Kontakt</a>
+
+    <b href="#">Szkółka Piłkarska</b>
+
+    <c href="#">Panel właściciela</c>
+</nav>
+
+<div class="container">
+    <section layout:fragment="content">
+        <p>Page content goes here</p>
+    </section>
+</div>
+</body>
+</html>

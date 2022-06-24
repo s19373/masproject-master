@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base}">
+<section layout:fragment="content">
+<head>
+    <meta charset="UTF-8">
+    <title>Trener</title>
+</head>
+
+<body>
+
+Aktywny Trener: <tr th:each="trener : ${aktywni}">
+
+    <p th:text="${trener}"></p>
+</tr>
+
+</body>
+</section>
+</html>

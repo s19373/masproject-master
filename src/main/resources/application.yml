@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    username: sa
+    password:
+    url: jdbc:h2:mem:testdb
+
+  jackson:
+    deserialization:
+      # to save time as UTC
+      ADJUST_DATES_TO_CONTEXT_TIME_ZONE: false
