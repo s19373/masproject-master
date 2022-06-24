@@ -3,6 +3,7 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{base}">
+        <link rel="stylesheet" href="/main.css"/>
 <section layout:fragment="content">
 
     <body>
@@ -10,7 +11,39 @@
     Mecze: <tr th:each="mecz : ${mecze}">
 
         <p th:text="${mecz}"></p>
+
     </tr>
+    <table class="content-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Data</th>
+            <th>Status</th>
+            <th>Wynik</th>
+            <th>Klub</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>Domenic</td>
+            <td>88,110</td>
+            <td>dcode</td>
+        </tr>
+        <tr class="active-row">
+            <td>2</td>
+            <td>Sally</td>
+            <td>72,400</td>
+            <td>Students</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Nick</td>
+            <td>52,300</td>
+            <td>dcode</td>
+        </tr>
+        </tbody>
+    </table>
 
     </body>
 </section>
