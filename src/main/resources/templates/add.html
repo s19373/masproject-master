@@ -10,16 +10,31 @@
     </head>
 
     <body>
-    Nowy Trener:
 
-    <form action="#" th:action="@{/add}" th:object="${trener}" method="GET">
-        Imie: <input type="text" name="imie" th:field="*{imie}"/><br/>
-        Nazwisko: <input type="text" name="nazw" th:field="*{nazwisko}"/><br/>
-        E-Mail: <input type="text" name="email" th:field="*{email}"/><br/>
-        Numer Telefonu: <input type="text" name="nrtel" th:field="*{nrKontaktowy}"/><br/>
-        Data Urodzenia: <input type="date" name="dataur" th:field="*{dataUrodzenia}"/><br/>
-        Liczba Godzin w Miesiącu: <input type="text" name="liczbagodzin" th:field="*{liczbaGodzin}"/><br/>
-        Stawka za Godzinę: <input type="text" name="stawka" th:field="*{stawkaZaGodzine}"/><br/>
+    <nav>
+        <a href="/mecze">Mecze</a>
+        <a href="#">Zawodnicy</a>
+        <a href="#">Sponsorzy</a>
+        <a href="#">O nas</a>
+        <a href="#">Kontakt</a>
+
+        <a class="a1" href="/mecze">Szkółka Piłkarska</a>
+
+        <a class="a2 active" href="/wlasciciel">Panel właściciela</a>
+    </nav>
+
+    Nowy Trener:
+    <p></p>
+    <p></p>
+    <p></p>
+    <form class="card-form" action="#" th:action="@{/add}" th:object="${trener}" method="GET">
+        Imie: <input type="text" name="imie" th:field="*{imie}"/><br/>                                          <p></p>
+        Nazwisko: <input type="text" name="nazw" th:field="*{nazwisko}"/><br/>                                  <p></p>
+        E-Mail: <input type="text" name="email" th:field="*{email}"/><br/>                                      <p></p>
+        Numer Telefonu: <input type="text" name="nrtel" th:field="*{nrKontaktowy}"/><br/>                       <p></p>
+        Data Urodzenia: <input type="date" name="dataur" th:field="*{dataUrodzenia}"/><br/>                     <p></p>
+        Liczba Godzin w Miesiącu: <input type="text" name="liczbagodzin" th:field="*{liczbaGodzin}"/><br/>      <p></p>
+        Stawka za Godzinę: <input type="text" name="stawka" th:field="*{stawkaZaGodzine}"/><br/>                <p></p>
 
         <button name="submit" type="submit" value="0">Submit</button>
     </form>

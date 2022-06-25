@@ -25,6 +25,7 @@ public class TrenerController {
         szkolkaService.saveTrener(trener);
         return "add";
     }
+
     @ModelAttribute
     public void addAttributes(Model model) {
         model.addAttribute("tytulglowny", "Szkółka piłkarska");

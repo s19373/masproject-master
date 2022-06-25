@@ -8,11 +8,20 @@
 
     <body>
 
-    Mecze: <tr th:each="mecz : ${mecze}">
+    <nav>
+        <a class="active" href="/mecze">Mecze</a>
+        <a href="#">Zawodnicy</a>
+        <a href="#">Sponsorzy</a>
+        <a href="#">O nas</a>
+        <a href="#">Kontakt</a>
 
-        <p th:text="${mecz}"></p>
+        <a class="a1" href="/mecze">Szkółka Piłkarska</a>
 
-    </tr>
+        <a class="a2" href="/wlasciciel">Panel właściciela</a>
+    </nav>
+
+
+    Mecze: <p></p>
     <table class="content-table">
         <thead>
         <tr>
@@ -24,23 +33,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>1</td>
-            <td>Domenic</td>
-            <td>88,110</td>
-            <td>dcode</td>
-        </tr>
-        <tr class="active-row">
-            <td>2</td>
-            <td>Sally</td>
-            <td>72,400</td>
-            <td>Students</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Nick</td>
-            <td>52,300</td>
-            <td>dcode</td>
+        <tr th:each="mecz : ${mecze}">
+            <td th:text="${mecz.getId()}" ></td>
+            <td th:text="${mecz.getData()}"></td>
+            <td th:text="${mecz.getStatusMeczu()}"></td>
+            <td th:text="${mecz.getWynik()}"></td>
+            <td th:text="${mecz.klub.getNazwa()}"></td>
         </tr>
         </tbody>
     </table>

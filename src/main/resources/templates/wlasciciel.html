@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base}">
+<link rel="stylesheet" href="/main.css"/>
+<section layout:fragment="content">
+
+    <body>
+
+    <nav>
+        <a href="/mecze">Mecze</a>
+        <a href="#">Zawodnicy</a>
+        <a href="#">Sponsorzy</a>
+        <a href="#">O nas</a>
+        <a href="#">Kontakt</a>
+
+        <a class="a1" href="/mecze">Szkółka Piłkarska</a>
+
+        <a class="a2 active" href="/wlasciciel">Panel właściciela</a>
+    </nav>
+
+    <button name="submit" type="button" >Trener</button>
+    <button name="submit" type="button" >Oblicz Łączną Kwotę Wsparcia Dla Sponsora</button>
+    <button name="submit" type="button" >Oblicz Miesięczne Wynagrodzenie Trenera</button>
+    <button name="submit" type="button" >Oblicz Koszty Rozegrania Meczów</button>
+
+
+    </body>
+</section>
+</html>
