@@ -122,17 +122,17 @@ public class DatabaseLoader implements CommandLineRunner {
         Mecz mecz1 = new Mecz();
         mecz1.setData(LocalDate.of(2022, 02, 02));
         mecz1.setStatusMeczu(StatusMeczu.ROZEGRANY);
-        mecz1.setWynik("2:0");
+        mecz1.setWynik("2:1");
         mecz1.setBoisko(boisko1);
-        mecz1.setLastName(Set.of(zawodnik.getNazwisko(),zawodnik3.getNazwisko()));
+        mecz1.setLastName(Set.of(zawodnik.getNazwisko(),zawodnik3.getNazwisko(),zawodnik2.getNazwisko()));
 
 
         Mecz mecz2 = new Mecz();
         mecz2.setData(LocalDate.of(2022, 02, 10));
         mecz2.setStatusMeczu(StatusMeczu.ROZEGRANY);
-        mecz2.setWynik("1:0");
+        mecz2.setWynik("1:1");
         mecz2.setBoisko(boisko1);
-        mecz2.setLastName(Set.of(zawodnik2.getNazwisko()));
+        mecz2.setLastName(Set.of(zawodnik2.getNazwisko(),zawodnik3.getNazwisko()));
 
         Mecz mecz3 = new Mecz();
         mecz3.setData(LocalDate.of(2022, 06, 28));
