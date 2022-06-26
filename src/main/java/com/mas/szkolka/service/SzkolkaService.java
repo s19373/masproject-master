@@ -19,7 +19,6 @@ import java.util.List;
 public class SzkolkaService {
     @Autowired
     private final TrenerRepository trenerRepository;
-
     @Autowired
     private final MeczRepository meczRepository;
 

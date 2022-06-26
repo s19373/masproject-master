@@ -20,14 +20,14 @@
 
         <a class="a1" href="/mecze">Szkółka Piłkarska</a>
 
-        <a class="a2 active" href="panel.html">Panel właściciela</a>
+        <a class="a2 active" href="http://localhost:8080/panel.html">Panel właściciela</a>
     </nav>
 
     Nowy Trener:
     <p></p>
     <p></p>
     <p></p>
-    <form class="card-form" action="#" th:action="@{/add}" th:object="${trener}" method="GET">
+    <form class="card-form" action="#" th:action="@{/addTrener}" th:object="${trener}" method="POST">
         Imie: <input type="text" name="imie" th:field="*{imie}"/><br/>                                          <p></p>
         Nazwisko: <input type="text" name="nazw" th:field="*{nazwisko}"/><br/>                                  <p></p>
         E-Mail: <input type="text" name="email" th:field="*{email}"/><br/>                                      <p></p>
@@ -35,10 +35,12 @@
         Data Urodzenia: <input type="date" name="dataur" th:field="*{dataUrodzenia}"/><br/>                     <p></p>
         Liczba Godzin w Miesiącu: <input type="text" name="liczbagodzin" th:field="*{liczbaGodzin}"/><br/>      <p></p>
         Stawka za Godzinę: <input type="text" name="stawka" th:field="*{stawkaZaGodzine}"/><br/>                <p></p>
+        Data Zatrudnienia: <input type="date" name="datazatr"  th:field="*{dataZatrudnienia}"/><br/>                     <p></p>
 
-        <button name="submit" type="submit" value="0">Submit</button>
+
+
+        <button name="submit" type="submit" >Submit</button>
     </form>
-
 
     </body>
 </section>

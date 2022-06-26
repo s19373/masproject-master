@@ -15,10 +15,8 @@ import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import java.time.ZoneId;
+import java.util.*;
 
 @Component
 @RequiredArgsConstructor
@@ -39,8 +37,8 @@ public class DatabaseLoader implements CommandLineRunner {
         trener1.setNazwisko("Kowalski");
         trener1.setEmail("jankow@gmail.com");
         trener1.setNrKontaktowy("539-602-202");
-        trener1.setDataUrodzenia(LocalDate.of(1996, 10, 22));
-        trener1.setDataZatrudnienia(LocalDate.of(2022, 1, 10));
+        trener1.setDataUrodzenia(new GregorianCalendar(1998, Calendar.FEBRUARY, 11).getTime());
+        trener1.setDataZatrudnienia(new GregorianCalendar(2022, Calendar.JANUARY, 16).getTime());
         trener1.setLiczbaGodzin(50);
         trener1.setStawkaZaGodzine(150);
 
@@ -49,8 +47,8 @@ public class DatabaseLoader implements CommandLineRunner {
         trener2.setNazwisko("Kowalski");
         trener2.setEmail("piotrkow@gmail.com");
         trener2.setNrKontaktowy("539-602-202");
-        trener2.setDataUrodzenia(LocalDate.of(1996, 10, 22));
-        trener2.setDataZatrudnienia(LocalDate.of(2022, 1, 10));
+        trener2.setDataUrodzenia(new GregorianCalendar(1998, Calendar.MARCH, 12).getTime());
+        trener2.setDataZatrudnienia(new GregorianCalendar(2014, Calendar.FEBRUARY, 22).getTime());
         trener2.setLiczbaGodzin(50);
         trener2.setStawkaZaGodzine(150);
 
@@ -59,8 +57,8 @@ public class DatabaseLoader implements CommandLineRunner {
         trener3.setNazwisko("Adamski");
         trener3.setEmail("adam@gmail.com");
         trener3.setNrKontaktowy("539-602-202");
-        trener3.setDataUrodzenia(LocalDate.of(1996, 10, 22));
-        trener3.setDataZatrudnienia(LocalDate.of(2022, 1, 10));
+        trener3.setDataUrodzenia(new GregorianCalendar(1989, Calendar.DECEMBER, 1).getTime());
+        trener3.setDataZatrudnienia(new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime());
         trener3.setLiczbaGodzin(50);
         trener3.setStawkaZaGodzine(150);
 

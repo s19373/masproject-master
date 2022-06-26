@@ -2,10 +2,13 @@ package com.mas.szkolka.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 @Entity
 @Table(name= "trener")
@@ -13,18 +16,18 @@ import java.time.Period;
 @Setter
 public class Trener extends Osoba{
 
-    private LocalDate dataZatrudnienia;
-    private int stazPracy;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date dataZatrudnienia;
+    private long stazPracy;
 
     private int liczbaGodzin;
 
     private int stawkaZaGodzine;
 
-    public int getStazPracy(){
-        LocalDate today = LocalDate.now();
-        Period diff = Period.between(dataZatrudnienia, today);
-        stazPracy = diff.getMonths();
-        return stazPracy;
+    public long getStazPracy(){
+        Date date = new Date();
+        stazPracy = getDateDiff(dataZatrudnienia,date,TimeUnit.DAYS);
+        return stazPracy/30;
     }
 
     @OneToOne(mappedBy = "trener")
@@ -39,5 +42,11 @@ public class Trener extends Osoba{
                 ", stawkaZaGodzine=" + stawkaZaGodzine +
                 ", klub=" + klub +
                 '}';
+    }
+
+
+    public static long getDateDiff(Date date1, Date date2, TimeUnit timeUnit) {
+        long diffInMillies = date2.getTime() - date1.getTime();
+        return timeUnit.convert(diffInMillies,TimeUnit.MILLISECONDS);
     }
 }
