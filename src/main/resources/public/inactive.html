@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+  <html lang="en"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+  <head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Title</title>
+    <link rel="stylesheet" href="/main.css"/>
+
+    <style>
+      *{
+        box-sizing: border-box;
+        font-family: sans-serif;
+
+      }
+      body{
+        margin:0;
+        background: #f6f9ff;
+        color: #444444;
+      }
+      nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background: white;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      nav a{
+        display: inline-block;
+        text-decoration: none;
+        padding: 5px 15px;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: cornflowerblue;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      nav a.a1{
+        position: fixed;
+        top: 700px;
+        display: inline-block;
+        text-decoration: none;
+        padding: 2px 2px;
+        font-size: 1.3em;
+        font-weight: bold;
+        color: cornflowerblue;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        align-items: baseline;
+      }
+
+      nav a.a2{
+        position: fixed;
+        top: 750px;
+        display: inline-block;
+        text-decoration: none;
+        padding: 5px 15px;
+        font-size: 0.9em;
+        font-weight: bold;
+        color: cornflowerblue;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        align-items: end;
+      }
+      nav a:hover{
+        color: #004cec;
+      }
+
+
+      /*code to change background color*/
+      nav a.active {
+        color: black;
+      }
+
+      div{
+        margin-left: 850px;
+        margin-top: 270px;
+        padding: 10px;
+        color: #555;
+      }
+      button {
+        display: inline-block;
+        padding: 0.7em 1.4em;
+        margin: 0 0.3em 0.3em 0;
+        border-radius: 0.15em;
+        box-sizing: border-box;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: #FFFFFF;
+        background-color: #3369ff;
+        box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+        text-align: center;
+        position: center;
+      }
+      button:active{
+        top:0.1em;
+      }
+
+
+    </style>
+
+  <body>
+
+  <nav>
+    <a href="/mecze">Mecze</a>
+    <a href="#">Zawodnicy</a>
+    <a href="#">Sponsorzy</a>
+    <a href="#">O nas</a>
+    <a href="#">Kontakt</a>
+
+    <a class="a1" href="/mecze">Szkółka Piłkarska</a>
+
+    <a class="a2 active" href="panel.html">Panel właściciela</a>
+  </nav>
+
+  <div>Wybrana funkcjonalność nie odnosi się do wybranego przypadku użycia!!!</div>
+
+
+  </body>
+
+</html>
