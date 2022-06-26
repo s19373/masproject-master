@@ -35,6 +35,7 @@
             <th>Wynik</th>
             <th>Klub rywal</th>
             <th>Boisko</th>
+            <th>Nazwisko/a strzelców</th>
 
         </tr>
         </thead>
@@ -46,6 +47,10 @@
             <td th:text="${mecz.getWynik()}"></td>
             <td th:text="${mecz.klub.getNazwa()}"></td>
             <td th:text="${mecz.boisko.getNazwa()}"></td>
+            <td th:text="${mecz.getLastName()}">
+
+
+            </td>
 
         </tr>
         <script>

@@ -7,6 +7,7 @@ import com.mas.szkolka.model.enums.StatusMeczu;
 import com.mas.szkolka.repository.KlubRepository;
 import com.mas.szkolka.repository.MeczRepository;
 import com.mas.szkolka.repository.TrenerRepository;
+import com.mas.szkolka.repository.ZawodnikRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -26,7 +27,7 @@ public class DatabaseLoader implements CommandLineRunner {
     private final MeczRepository meczRepository;
     private final KlubRepository klubRepository;
 
-
+    private final ZawodnikRepository zawodnikRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -84,6 +85,37 @@ public class DatabaseLoader implements CommandLineRunner {
         zawodnik.setNrDoRodziców("999-991-992");
         zawodnik.setRodzajZajec(RodzajZajec.FUN);
 
+
+        ZawodnikU10 zawodnik2 = new ZawodnikU10();
+        zawodnik2.setNrKontaktowy("454-666-999");
+        zawodnik2.setEmail("kowal@gmail.com");
+        zawodnik2.setImie("Bob");
+        zawodnik2.setNazwisko("Kowalski");
+        zawodnik2.setDataPrzyjecia(LocalDate.of(2021,10,1));
+        zawodnik2.setNrNaKoszulce(10);
+        zawodnik2.setPozycja("Lewe skrzydło");
+        zawodnik2.setStatus(Status.AKTYWNY);
+        zawodnik2.setWysokoscSkladki(100);
+        zawodnik2.setNrDoRodziców("999-991-992");
+        zawodnik2.setRodzajZajec(RodzajZajec.FUN);
+
+        ZawodnikU10 zawodnik3 = new ZawodnikU10();
+        zawodnik3.setNrKontaktowy("666-666-888");
+        zawodnik3.setEmail("lwey@gmail.com");
+        zawodnik3.setImie("Młody");
+        zawodnik3.setNazwisko("Lewandowski");
+        zawodnik3.setDataPrzyjecia(LocalDate.of(2021,10,1));
+        zawodnik3.setNrNaKoszulce(9);
+        zawodnik3.setPozycja("Napastnik");
+        zawodnik3.setStatus(Status.AKTYWNY);
+        zawodnik3.setWysokoscSkladki(100);
+        zawodnik3.setNrDoRodziców("999-991-992");
+        zawodnik3.setRodzajZajec(RodzajZajec.FUN);
+
+        zawodnikRepository.save(zawodnik);
+        zawodnikRepository.save(zawodnik2);
+        zawodnikRepository.save(zawodnik3);
+
         Boisko boisko1 = new Boisko();
         boisko1.setNazwa("Stadion AWF");
         Boisko boisko2 = new Boisko();
@@ -92,8 +124,9 @@ public class DatabaseLoader implements CommandLineRunner {
         Mecz mecz1 = new Mecz();
         mecz1.setData(LocalDate.of(2022, 02, 02));
         mecz1.setStatusMeczu(StatusMeczu.ROZEGRANY);
-        mecz1.setWynik("1:0");
+        mecz1.setWynik("2:0");
         mecz1.setBoisko(boisko1);
+        mecz1.setLastName(Set.of(zawodnik.getNazwisko(),zawodnik3.getNazwisko()));
 
 
         Mecz mecz2 = new Mecz();
@@ -101,6 +134,7 @@ public class DatabaseLoader implements CommandLineRunner {
         mecz2.setStatusMeczu(StatusMeczu.ROZEGRANY);
         mecz2.setWynik("1:0");
         mecz2.setBoisko(boisko1);
+        mecz2.setLastName(Set.of(zawodnik2.getNazwisko()));
 
         Mecz mecz3 = new Mecz();
         mecz3.setData(LocalDate.of(2022, 06, 28));
