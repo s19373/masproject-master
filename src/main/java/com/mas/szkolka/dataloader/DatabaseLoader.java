@@ -112,9 +112,7 @@ public class DatabaseLoader implements CommandLineRunner {
         zawodnik3.setNrDoRodziców("999-991-992");
         zawodnik3.setRodzajZajec(RodzajZajec.FUN);
 
-        zawodnikRepository.save(zawodnik);
-        zawodnikRepository.save(zawodnik2);
-        zawodnikRepository.save(zawodnik3);
+
 
         Boisko boisko1 = new Boisko();
         boisko1.setNazwa("Stadion AWF");
@@ -181,6 +179,14 @@ public class DatabaseLoader implements CommandLineRunner {
         mecz1.setKlub(klub1);
         mecz2.setKlub(klub2);
         mecz3.setKlub(klub3);
+        zawodnik.setKlub(klub1);
+        zawodnik3.setKlub(klub1);
+        zawodnik2.setKlub(klub2);
+
+
+        zawodnikRepository.save(zawodnik);
+        zawodnikRepository.save(zawodnik2);
+        zawodnikRepository.save(zawodnik3);
         meczRepository.save(mecz1);
         meczRepository.save(mecz2);
         meczRepository.save(mecz3);
