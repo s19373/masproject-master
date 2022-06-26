@@ -4,10 +4,7 @@ import com.mas.szkolka.model.*;
 import com.mas.szkolka.model.enums.RodzajZajec;
 import com.mas.szkolka.model.enums.Status;
 import com.mas.szkolka.model.enums.StatusMeczu;
-import com.mas.szkolka.repository.KlubRepository;
-import com.mas.szkolka.repository.MeczRepository;
-import com.mas.szkolka.repository.TrenerRepository;
-import com.mas.szkolka.repository.ZawodnikRepository;
+import com.mas.szkolka.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -27,6 +24,7 @@ public class DatabaseLoader implements CommandLineRunner {
     private final MeczRepository meczRepository;
     private final KlubRepository klubRepository;
 
+    private final SponsorPrywatnyRepository sponsorPrywatnyRepository;
     private final ZawodnikRepository zawodnikRepository;
 
     @Override
@@ -69,8 +67,18 @@ public class DatabaseLoader implements CommandLineRunner {
         trenerRepository.save(trener3);
 
         SponsorPrywatny sponsor1 = new SponsorPrywatny();
-        sponsor1.setDataRozpoczeciaWspolpracy(LocalDate.of(2019,1,1));
-        sponsor1.setOkresWsparcia(10);
+        sponsor1.setDataRozpoczeciaWspolpracy(LocalDate.of(2009,3,7));
+
+        SponsorPrywatny sponsor2 = new SponsorPrywatny();
+        sponsor2.setDataRozpoczeciaWspolpracy(LocalDate.of(2022,5,16));
+
+        SponsorPrywatny sponsor3 = new SponsorPrywatny();
+        sponsor3.setDataRozpoczeciaWspolpracy(LocalDate.of(2019,12,21));
+
+        SponsorPrywatny sponsor4 = new SponsorPrywatny();
+        sponsor4.setDataRozpoczeciaWspolpracy(LocalDate.of(2016,11,1));
+
+
 
         ZawodnikU10 zawodnik = new ZawodnikU10();
         zawodnik.setNrKontaktowy("424-424-424");
@@ -182,7 +190,15 @@ public class DatabaseLoader implements CommandLineRunner {
         zawodnik.setKlub(klub1);
         zawodnik3.setKlub(klub1);
         zawodnik2.setKlub(klub2);
+        sponsor1.setKluby(Set.of(klub1,klub2,klub3));
+        sponsor2.setKluby(Set.of(klub2,klub3));
+        sponsor3.setKluby(Set.of(klub2));
+        sponsor4.setKluby(Set.of(klub1,klub3));
 
+        sponsorPrywatnyRepository.save(sponsor1);
+        sponsorPrywatnyRepository.save(sponsor2);
+        sponsorPrywatnyRepository.save(sponsor3);
+        sponsorPrywatnyRepository.save(sponsor4);
 
         zawodnikRepository.save(zawodnik);
         zawodnikRepository.save(zawodnik2);

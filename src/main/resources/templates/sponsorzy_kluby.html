@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base}">
+<section layout:fragment="content">
+  <head>
+    <meta charset="UTF-8">
+    <title>Kluby W Sponsorze</title>
+  </head>
+
+  <body>
+
+  <nav>
+    <a href="/mecze">Mecze</a>
+    <a href="http://localhost:8080/inactive.html">Zawodnicy</a>
+    <a class="active" href="/sponsorzy">Sponsorzy</a>
+    <a href="http://localhost:8080/inactive.html">O nas</a>
+    <a href="http://localhost:8080/inactive.html">Kontakt</a>
+
+    <a class="a1" href="/mecze">Szkółka Piłkarska</a>
+
+    <a class="a2 active" href="http://localhost:8080/panel.html">Panel właściciela</a>
+  </nav>
+
+  Kluby
+
+  <table id="sponsorzy" class="content-table fbody">
+    <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Lokalizacja</th>
+      <th>Min Liczba Zawodnikow</th>
+      <th>Max Liczba Zawodnikow</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="klub : ${klubyWSponsorze}">
+      <td th:text="${klub.getNazwa()}" ></td>
+      <td th:text="${klub.getLokalizacja()}"></td>
+      <td th:text="${klub.getMinLiczbaZawodnikow()}"></td>
+      <td th:text="${klub.getMaxLiczbaZawodnikow()}"></td>
+
+    </tr>
+
+    </tbody>
+  </table>
+
+  <a th:href="@{/sponsorzy}" >Wróć do sponsorów</a>
+
+  </body>
+</section>
+</html>
