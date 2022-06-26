@@ -38,7 +38,7 @@ public class DatabaseLoader implements CommandLineRunner {
         trener1.setEmail("jankow@gmail.com");
         trener1.setNrKontaktowy("539-602-202");
         trener1.setDataUrodzenia(new GregorianCalendar(1998, Calendar.FEBRUARY, 11).getTime());
-        trener1.setDataZatrudnienia(new GregorianCalendar(2022, Calendar.JANUARY, 16).getTime());
+        trener1.setDataZatrudnienia(new GregorianCalendar(2012, Calendar.JANUARY, 16).getTime());
         trener1.setLiczbaGodzin(50);
         trener1.setStawkaZaGodzine(150);
 
@@ -58,7 +58,7 @@ public class DatabaseLoader implements CommandLineRunner {
         trener3.setEmail("adam@gmail.com");
         trener3.setNrKontaktowy("539-602-202");
         trener3.setDataUrodzenia(new GregorianCalendar(1989, Calendar.DECEMBER, 1).getTime());
-        trener3.setDataZatrudnienia(new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime());
+        trener3.setDataZatrudnienia(new GregorianCalendar(2022, Calendar.FEBRUARY, 11).getTime());
         trener3.setLiczbaGodzin(50);
         trener3.setStawkaZaGodzine(150);
 

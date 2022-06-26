@@ -23,14 +23,41 @@
     <a class="a2 active" href="http://localhost:8080/panel.html">Panel właściciela</a>
 </nav>
 
-Aktywny Trener: <tr th:each="trener : ${aktywni}">
+Aktywny Trener: <tr th:with="trener=${aktywni[#lists.size(aktywni) - 1]}">
 
-    <p th:text="${trener}"></p>
-
+    <table id="mecze" class="content-table fbody">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Imie</th>
+            <th>Nazwisko</th>
+            <th>Data Zatrudnienia</th>
+            <th>Staż pracy</th>
+            <th>Liczba godzin w miesiącu</th>
+            <th>Stawka za godzinę</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${trener.getId()}" ></td>
+            <td th:text="${trener.getImie()}"></td>
+            <td th:text="${trener.getNazwisko()}"></td>
+            <td th:text="${trener.getDataZatrudnienia()}"></td>
+            <td th:text="${trener.getStazPracy()}"></td>
+            <td th:text="${trener.getLiczbaGodzin()}"></td>
+            <td th:text="${trener.getStawkaZaGodzine()}"></td>
+            <td th:text="${trener.getEmail()}"></td>
+        </tr>
+        </tbody>
+    </table>
 </tr>
 <p></p>
 
-<a href="/add" class="button">Przydziel Nowego Trenera</a>
+<a href="/add" class="button">Przydziel Nowego Trenera</a> <p></p><p></p><p></p><p></p><p></p><p></p>
+
+
+<a href="/historia" class="button">Wyświetl historię trenerów</a>
 
 </body>
 </section>

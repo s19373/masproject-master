@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base}">
+<section layout:fragment="content">
+    <head>
+        <meta charset="UTF-8">
+        <title>Aktywny Trener</title>
+    </head>
+
+    <body>
+
+    <nav>
+        <a href="/mecze">Mecze</a>
+        <a href="http://localhost:8080/inactive.html">Zawodnicy</a>
+        <a href="http://localhost:8080/inactive.html">Sponsorzy</a>
+        <a href="http://localhost:8080/inactive.html">O nas</a>
+        <a href="http://localhost:8080/inactive.html">Kontakt</a>
+
+        <a class="a1" href="/mecze">Szkółka Piłkarska</a>
+
+        <a class="a2 active" href="http://localhost:8080/panel.html">Panel właściciela</a>
+    </nav>
+
+    Aktywny Trener: <tr th:each="trener : ${aktywni}">
+
+        <p th:text="${trener}"></p>
+
+    </tr>
+    <p></p>
+
+    <a href="/add" class="button">Przydziel Nowego Trenera</a>
+
+    </body>
+</section>
+</html>

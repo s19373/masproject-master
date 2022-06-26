@@ -33,7 +33,9 @@
             <th>Data</th>
             <th>Status</th>
             <th>Wynik</th>
-            <th>Klub</th>
+            <th>Klub rywal</th>
+            <th>Boisko</th>
+
         </tr>
         </thead>
         <tbody>
@@ -43,6 +45,8 @@
             <td th:text="${mecz.getStatusMeczu()}"></td>
             <td th:text="${mecz.getWynik()}"></td>
             <td th:text="${mecz.klub.getNazwa()}"></td>
+            <td th:text="${mecz.boisko.getNazwa()}"></td>
+
         </tr>
         <script>
             $(".searchInput").on("input", function() {

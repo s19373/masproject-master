@@ -19,6 +19,11 @@ public class TrenerController {
         model.addAttribute("aktywni", szkolkaService.listAllTrenerzy());
         return "aktywny";
     }
+    @GetMapping("/historia")
+    public String getHistoria(Model model){
+        model.addAttribute("aktywni", szkolkaService.listAllTrenerzy());
+        return "historia";
+    }
     @GetMapping("/add")
     public String trenerForm(Model model) {
         Trener trener = new Trener();
